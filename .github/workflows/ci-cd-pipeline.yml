@@ -20,10 +20,10 @@ jobs:
         dotnet-version: '8.0.x'
         
     - name: Restaurar dependências
-      run: dotnet restore
+      run: dotnet restore ./src/Ambev.DeveloperEvaluation.WebApi/Ambev.DeveloperEvaluation.WebApi.csproj
       
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build ./src/Ambev.DeveloperEvaluation.WebApi/Ambev.DeveloperEvaluation.WebApi.csproj --configuration Release --no-restore
       
     - name: Executar testes
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test ./tests/Ambev.DeveloperEvaluation.Unit/Ambev.DeveloperEvaluation.Unit.csproj --no-restore --verbosity normal
