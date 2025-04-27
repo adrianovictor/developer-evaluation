@@ -25,5 +25,12 @@ jobs:
     - name: Build
       run: dotnet build ./src/Ambev.DeveloperEvaluation.WebApi/Ambev.DeveloperEvaluation.WebApi.csproj --configuration Release --no-restore
       
-    - name: Executar testes
+    - name: Executar testes de unidade
       run: dotnet test ./tests/Ambev.DeveloperEvaluation.Unit/Ambev.DeveloperEvaluation.Unit.csproj --no-restore --verbosity normal
+    
+    - name: Executar testes de integração
+      run: dotnet test ./tests/Ambev.DeveloperEvaluation.Integration/Ambev.DeveloperEvaluation.Integration.csproj --no-restore --verbosity normal
+      
+    - name: Executar testes funcionais
+      run: dotnet test ./tests/Ambev.DeveloperEvaluation.Functional/Ambev.DeveloperEvaluation.Functional.csproj --no-restore --verbosity normal
+           
